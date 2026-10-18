@@ -1,0 +1,252 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #e8eee9;
+  background: #0b110e;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 0%, #183526 0%, transparent 38%),
+    #0b110e;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.dashboard {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 42px 32px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #28362d;
+}
+
+.eyebrow {
+  color: #8fbd9d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+h1,
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: clamp(30px, 5vw, 44px);
+  letter-spacing: -1.8px;
+}
+
+h1 span {
+  color: #8be0a5;
+}
+
+.subtitle,
+.welcome p:not(.eyebrow) {
+  color: #9aa99f;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  padding: 10px 14px;
+  border: 1px solid #345541;
+  border-radius: 30px;
+  background: #15251b;
+  color: #a8e8b9;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6fda91;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin: 30px 0;
+  padding: 28px;
+  border: 1px solid #2d4c37;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #1a3323, #15231a);
+}
+
+.welcome h2 {
+  margin: 12px 0 8px;
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: -0.8px;
+}
+
+.welcome p:not(.eyebrow) {
+  margin-bottom: 0;
+}
+
+.welcome button {
+  flex-shrink: 0;
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 10px;
+  background: #9be8ad;
+  color: #102017;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.welcome button:hover {
+  background: #b8f4c5;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.metric-card {
+  min-height: 165px;
+  padding: 23px;
+  border: 1px solid #29382f;
+  border-radius: 16px;
+  background: #121a15;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.metric-card:hover {
+  border-color: #578565;
+  transform: translateY(-2px);
+}
+
+.metric-card p {
+  margin: 0;
+  color: #a1b0a5;
+  font-size: 13px;
+}
+
+.metric-card h2 {
+  margin: 20px 0 10px;
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+
+.metric-card h2 small {
+  color: #91c9a0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.metric-card > span {
+  color: #74847a;
+  font-size: 12px;
+}
+
+footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #28362d;
+  color: #74847a;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .dashboard {
+    padding: 24px 16px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .welcome {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .metric-card {
+    padding: 17px;
+    min-height: 150px;
+  }
+
+  .metric-card h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 420px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dev-trigger {
+  margin-left: auto;
+  padding: 9px 12px;
+  border: 1px solid #345541;
+  border-radius: 10px;
+  background: #15251b;
+  color: #a8e8b9;
+}
+
+.dev-trigger:hover {
+  background: #203a29;
+}
+
+.dev-panel {
+  margin-top: 18px;
+}
+
+.esp-input {
+  display: block;
+  width: min(100%, 360px);
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #45654e;
+  border-radius: 9px;
+  background: #0b110e;
+  color: #e8eee9;
+  outline: none;
+}
+
+.esp-input:focus {
+  border-color: #8be0a5;
+}
